@@ -5,6 +5,7 @@ const geocode = require("./utils/geocode");
 const getWeather = require("./utils/weather");
 
 const app = express();
+const port = process.env.PORT || 3000
 
 const publicPath = "../public";
 const hbsPath = "/tamplates/";
@@ -73,6 +74,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("SERVER START");
+app.listen(port, () => {
+  console.log(`SERVER START on port ${port}`);
 });
